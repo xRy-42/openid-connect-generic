@@ -177,6 +177,10 @@ msgstr ""
 msgid "WordPress User Settings"
 msgstr ""
 
+#: includes/openid-connect-generic-settings-page.php:140
+msgid "WordPress Role Mapping"
+msgstr ""
+
 #: includes/openid-connect-generic-settings-page.php:147
 msgid "Authorization Settings"
 msgstr ""
@@ -465,6 +469,10 @@ msgstr ""
 
 #: includes/openid-connect-generic-settings-page.php:549
 msgid "Modify the interaction between OpenID Connect and WordPress users."
+msgstr ""
+
+#: includes/openid-connect-generic-settings-page.php:549
+msgid "Map your OpenId Connect roles to WordPress roles."
 msgstr ""
 
 #: includes/openid-connect-generic-settings-page.php:558

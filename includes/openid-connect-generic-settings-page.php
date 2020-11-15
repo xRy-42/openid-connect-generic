@@ -143,6 +143,13 @@ class OpenID_Connect_Generic_Settings_Page {
 		);
 
 		add_settings_section(
+			'role_settings',
+			__( 'WordPress Role Mapping', 'daggerhart-openid-connect-generic' ),
+			array( $this, 'role_settings_description' ),
+			$this->options_page_name
+		);
+
+		add_settings_section(
 			'authorization_settings',
 			__( 'Authorization Settings', 'daggerhart-openid-connect-generic' ),
 			array( $this, 'authorization_settings_description' ),
@@ -367,6 +374,37 @@ class OpenID_Connect_Generic_Settings_Page {
 				'type'        => 'checkbox',
 				'section'     => 'user_settings',
 			),
+			# todo: add to language
+			'administrator_mapping'   => array(
+				'title'       => __( 'Administrator', 'daggerhart-openid-connect-generic' ),
+				'description' => __( 'Corresponding OpenId Connect Role, that should be mapped to administrator. Leave empty to not influence the roles.', 'daggerhart-openid-connect-generic' ),
+				'type'        => 'text',
+				'section'     => 'role_settings',
+				),
+			'editor_mapping'   => array(
+				'title'       => __( 'Editor', 'daggerhart-openid-connect-generic' ),
+				'description' => __( 'Corresponding OpenId Connect Role, that should be mapped to editor. Leave empty to not influence the roles.', 'daggerhart-openid-connect-generic' ),
+				'type'        => 'text',
+				'section'     => 'role_settings',
+			),
+			'author_mapping'   => array(
+				'title'       => __( 'Author', 'daggerhart-openid-connect-generic' ),
+				'description' => __( 'Corresponding OpenId Connect Role, that should be mapped to author. Leave empty to not influence the roles.', 'daggerhart-openid-connect-generic' ),
+				'type'        => 'text',
+				'section'     => 'role_settings',
+			),
+			'contributor_mapping'   => array(
+				'title'       => __( 'Contributor', 'daggerhart-openid-connect-generic' ),
+				'description' => __( 'Corresponding OpenId Connect Role, that should be mapped to contributor. Leave empty to not influence the roles.', 'daggerhart-openid-connect-generic' ),
+				'type'        => 'text',
+				'section'     => 'role_settings',
+			),
+			'subscriber_mapping'   => array(
+				'title'       => __( 'Subscriber', 'daggerhart-openid-connect-generic' ),
+				'description' => __( 'Corresponding OpenId Connect Role, that should be mapped to subscriber. Leave empty to not influence the roles.', 'daggerhart-openid-connect-generic' ),
+				'type'        => 'text',
+				'section'     => 'role_settings',
+			),
 			'enable_logging'    => array(
 				'title'       => __( 'Enable Logging', 'daggerhart-openid-connect-generic' ),
 				'description' => __( 'Very simple log messages for debugging purposes.', 'daggerhart-openid-connect-generic' ),
@@ -554,6 +592,15 @@ class OpenID_Connect_Generic_Settings_Page {
 	 */
 	public function user_settings_description() {
 		_e( 'Modify the interaction between OpenID Connect and WordPress users.', 'daggerhart-openid-connect-generic' );
+	}
+
+	/**
+	 * Output the ' Wordpress Role Mapping' plugin setting section description.
+	 *
+	 * @return void
+	 */
+	public function role_settings_description() {
+		_e( 'Map your OpenId Connect roles to WordPress roles.', 'daggerhart-openid-connect-generic' );
 	}
 
 	/**
